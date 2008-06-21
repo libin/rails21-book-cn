@@ -1,9 +1,8 @@
 ##Removing whitespaces with squish method
 
-Two new methods added to the **String** object, **squish** and **squish!**.
+两个新方法被加入到 **String** 对象中， **squish** 和 **squish!**。
 
-These methods do the same as **strip** method. It removes white spaces from the beginning and the end of the text. It also removes unused white-spaces (multiple white-spaces) from the middle of the text
-Look the example:
+这两个方法和 **strip** 方法一样。它删除文本前后的空格，它也删除文本中间无用的空格。看这个例子：
 
 	“    A    text    full    of     spaces    “.strip
 	#=> “A    text    full    of     spaces”
