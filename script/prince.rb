@@ -42,8 +42,8 @@ class Prince
     path << ' --silent - -o -'
 
     # Show the command used...
-    puts "\n\nPRINCE XML PDF COMMAND"
-    puts path
+    #logger.info "\n\nPRINCE XML PDF COMMAND"
+    #logger.info path
     #logger.info ''
 
     # Actually call the prince command, and pass the entire data stream back.

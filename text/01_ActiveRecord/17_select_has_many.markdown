@@ -1,9 +1,9 @@
-## Option :select in has\_one and belongs\_to
+## has\_one和belongs\_to中的:select选项
 
-The already known methods **has\_one** and **belongs\_to** just got a now option: **:select**.
+已经为人熟知的**has\_one**和**belongs\_to**方法现在接收一个新属性**:select**。 
 
-Its default value is "*" (as in "SELECT * FROM table"), but you can edit it to retrieve only the columns you are going to be using.
-     
-Don't forget to include the **primary** and **foreign keys**, otherwise you will get an error.
+它的默认值是“*”(正如"SELECT * FROM table")，不过你可以更改默认值来获得任何你希望的列。
 
-The **belongs_to** method does not have the option **:order** anymore. But don't worry, because it didn't really have a use.
+别忘了包括进主键和外键，否则你会得到一个错误。
+
+**belongs_to**方法不再支持**:order**选项了，不过不要担心，因为那基本上没什么用处。

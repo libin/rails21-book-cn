@@ -1,8 +1,8 @@
 ## Has\_one
 
-### Support for the option through   
+### 支持 through 选项   
 
-The **has\_one** method now has the option **through**. It works just like **has_many :through**, but it represents the association to a single **ActiveRecord** object.
+**has\_one**方法现在支持**through**选项。他的用法与**has_many:through**相同，不过代表的是和单一一个**ActiveRecord**对象的关联.
 
 	class Magazine < ActiveRecord::Base
 	  has_many :subscriptions
@@ -19,19 +19,17 @@ The **has\_one** method now has the option **through**. It works just like **has
 		        :conditions => ['subscriptions.active = ?', true]
 	end
 	
-### Has\_one with :source\_type             
-                               
-The **has\_one :through** method, just mentioned above, can also take **:source\_type**. I will try to explain this through some examples. Let's start with these two classes:
+### Has\_one :source\_type 选项
+
+上边提到的**has\_one :through**方法还能接收一个**:source\_type**选项，我会试着通过一些例子来解释。我们先来看看这个类：
 
 	class Client < ActiveRecord::Base
 	  has_many :contact_cards 
 
 	  has_many :contacts, :through => :contact_cards
 	end 
-         
-What we are looking at here is a **Client** class which **has_many** kinds of contacts, since the **ContactCard** class has a polymorphic relationship.
 
-Next step in our example, let's create two classes to represent a **ContactCard**:
+上边的代码是一个**Client**类，**has_many**种联系人(contacts)，由于**ContactCard**类具有多态性，下一步，我们创建2个类来代表**ContractCard**： 
 
 	class Person < ActiveRecord::Base
 	  has_many :contact_cards, :as => :contact
@@ -41,15 +39,13 @@ Next step in our example, let's create two classes to represent a **ContactCard*
 	  has_many :contact_cards, :as => :contact
 	end
           
-**Person** and **Business** relate to my **Client** class through the **ContactCard** table. In other words, I have two kinds of contacts, personal and business. 
-
-This is not going to work, however. Watch what happens when I try to retrieve a contact:
+**Person**和**Business**通过**ContactCard**表与**Client**类关联，换句话说，我有两类联系人，私人的(personal)和工作上的(business)。然而，这样做却行不通，看看当我试图获取一个contact时候发生了什么：
 
 	>> Client.find(:first).contacts
 	# ArgumentError: /…/active_support/core_ext/hash/keys.rb:48:
 	# in `assert_valid_keys’: Unknown key(s): polymorphic 
                        
-To make this work we have to use **:source_type**. Let's change our **Client** class:
+为了让上述代码成功，我们需要使用**:source_type**。我们更改一下**Client**类：
 
 	class Client < ActiveRecord::Base
 	  has_many :people_contacts,
@@ -63,7 +59,7 @@ To make this work we have to use **:source_type**. Let's change our **Client** c
 	           :source_type => :business
 	end
 	                       
-Notice how we now have two different ways of retrieving our contacts and we can say what contact **:source_type** we are expecting.
+注意到现在我们有两种获得联系人的方式，我们可以选择我们期待哪种**:source_type**。
 
 	Client.find(:first).people_contacts
 	Client.find(:first).business_contacts

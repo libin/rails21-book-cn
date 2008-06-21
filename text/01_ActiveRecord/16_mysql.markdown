@@ -1,6 +1,6 @@
-## Smallint, int or bigint in MySQL?
+## MySQL中使用Smallint, int还是bigint？
                        
-The **MySQL** adapter for **ActiveRecord** is now smarter when creating or altering columns in the database using integer types. According to the option **:limit**, it will now tell if the column will be a **smallint**, **int** or **bigint**. Let's take a look at an example that does just that:
+现在在创建或者更改整型列的时候**ActiveRecord**的**MySQL**适配器会处理的更为聪明，它可以根据**:limit**属性确定一个字段的类型应该是**smallint**，**int**还是**bigint**。我们来看个实现上述功能的例子：
 
 	case limit
 	when 0..3
@@ -13,7 +13,7 @@ The **MySQL** adapter for **ActiveRecord** is now smarter when creating or alter
 	  'int(11)'
 	end
 
-Now let's map it in a **migration** file and see what column type will be created for each column:
+现在我们在**migration**中使用它，看看每一个字段应该匹配什么类型：
 
 	create_table :table_name, :force => true do |t|
 
@@ -30,4 +30,4 @@ Now let's map it in a **migration** file and see what column type will be create
 	  t.integer :column_four # int(11)
 	end
       
-The **PostgreSQL** adapter had this feature already and **MySQL** just caught up.
+**PostgreSQL**适配器已经有这个功能了，现在**MySQL**也不甘落后了。

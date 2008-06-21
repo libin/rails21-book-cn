@@ -1,6 +1,6 @@
 ## Dirty Objects
                   
-Now in Rails we are able to keep track of changes made to **ActiveRecord**. It is possible to know if an object has been changed or not. In case it has been changed, we can track down its latest changes. Let's take look at a few examples:
+在新Rails当中，我们同样可以跟踪对**ActiveRecord**所做的更改。我们能够知道是否一个对象被进行了修改，如果有更改，那么我们就能跟踪到最新的更改。我们来看几个例子：
 
   article = Article.find(:first)
 	article.changed?  #=> false
@@ -15,7 +15,7 @@ Now in Rails we are able to keep track of changes made to **ActiveRecord**. It i
 	# before and after the change
 	article.title_change  #=> ["Title", "New Title"]
 
-As you can see it is very simple. You can also list all changes made to the object in one of two ways:
+可以看到，使用上边非常的简单，同时你也能够通过下列两种方法的任意一种列出对一个对象的所有更改：
 
 	# returns a list with all of the attributes that were changed
 	article.changed  #=> ['title']
@@ -24,13 +24,13 @@ As you can see it is very simple. You can also list all changes made to the obje
 	# along with its values before and after
 	article.changes  #=> { 'title’ => ["Title", "New Title"] }
              
-Notice that when an object is saved, its status changes:
+注意到当一个对象被保存后，他的状态也随之改变：
 
 	article.changed?  #=> true
 	article.save  #=> true
 	article.changed?  #=> false
    
-In case you want to change an object's state without using **attr=**, you will need to explicitly inform that the attribute was changed by using the method **attr\_name\_will\_change!** (replace **attr** with an object's real attribute). Let's look at one last example:
+如果你不通过**attr=**来更改一个对象的状态，那么你需要显示的调用**attr\_name\_will\_change!**方法(用对象的实际属性名称替换**attr**)来通知属性已经被更改。我们再看最后一个例子：
     
 	article = Article.find(:first)
 	article.title_will_change!

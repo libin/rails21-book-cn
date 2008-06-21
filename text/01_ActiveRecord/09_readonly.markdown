@@ -1,6 +1,6 @@
-## Readonly relationships
+## 只读关联 (Readonly relationships)
 
-A new feature is added to the relationship among models. To avoid change in a models' state you can now use **:readonly** when describing associations. Let's take a look at a few examples:
+一个新的功能被添加到了models之间的关联当中。为了避免更改关联模型的状态，你现在可以使用**:readonly**来描述一个关联。我们看几个例子：
 
 	has_many :reports, :readonly => true
 
@@ -10,4 +10,4 @@ A new feature is added to the relationship among models. To avoid change in a mo
 
 	has_and_belongs_to_many :categories, :readonly => true
 	      
-This way your associated models are safe from being edited from within this model. If you try editing any of them you will get an **ActiveRecord::ReadOnlyRecord** exception.
+这样，关联的models就能够避免在model中被更改，如果试图更改他们，那么将得到一个**ActiveRecord::ReadOnlyRecord**异常
