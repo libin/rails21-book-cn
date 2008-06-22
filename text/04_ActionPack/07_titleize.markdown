@@ -1,11 +1,11 @@
-## Applying title formatting in strings
+## 在字符串中应用格式化标题
 
-There was a bug when using **String#titleize** method in a string containing 's . The bug made the method return the 's in uppercase. See an example:
+以前当你在一个包含了 's 的字符串中使用 **String#titleize** 方法时有一个 bug. 这个 bug 返回大写的 'S, 看一个示例：
 
 	>> "brando’s blog".titleize
 	=> "Brando’S Blog"
 	
-See the same example, but with the bug fixed:
+看相当的示例，但已经修复了这个bug：
 
 	>> "brando’s blog".titleize
 	=> "Brando’s Blog"

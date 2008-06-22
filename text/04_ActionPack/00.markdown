@@ -1,4 +1,4 @@
 # ActionPack
 
-Comprises ActionView (visualization generation for end user, like HTML, XML, JavaScript, and etc) and ActionController (business flow control)
+包含 ActionView (为最终用户生成显示，象 HTML,XML,JavaScript) 和 ActionController (业务流程控制)。
 (adapted from wikipedia)

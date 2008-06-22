@@ -1,12 +1,12 @@
 ## Cache
 
-All **fragment\_cache\_key** methods now return by default the namespace 'view/' as prefix.
+现在所有的 **fragment\_cache\_key** 方法默认返回 'view/' 前缀命名。
 
-All caching stores were removed from **ActionController::Caching::Fragments::*** and now they can be found in **ActiveSupport::Cache::***. In this case, if you made a reference to a store, like **ActionController::Caching::Fragments::MemoryStore**, for example, you'll have to change its reference to **ActiveSupport::Cache::MemoryStore**.
+所有缓存储存已经从 **ActionController::Caching::Fragments::** 删除，并替换为 **ActiveSupport::Cache::**. 在这种情况下，如果你指定一个储存地址，象 **ActionController::Caching::Fragments::MemoryStore** , 你需要这样写： **ActiveSupport::Cache::MemoryStore**.
 
-**ActionController::Base.fragment\_cache\_store** is no more and **ActionController::Base.cache\_store** takes its place.
+**ActionController::Base.fragment\_cache\_store** 已经不再使用，**ActionController::Base.cache\_store** 取代了它的位置。 
 
-It was included in the **ActiveRecord::Base** the **cache\_key** method to facilitate the storing cache of Active Records by the new libraries **ActiveSupport::Cache::***. It works this way:
+由于这个新的 **ActiveSupport::Cache::*** 库，它使在 **ActiveRecord::Base** 中的 **cache\_key** 方法容易缓存一个 Active Records ，它这样工作：
 
 	>> Product.new.cache_key
 	=> "products/new"
@@ -17,9 +17,9 @@ It was included in the **ActiveRecord::Base** the **cache\_key** method to facil
 	>> Person.find(5).cache_key
 	=> "people/5-20071224150000"
 
-**ActiveSupport::Gzip.decompress/compress**  was included to make easier the use as a wrapper for **Zlib**.
+它包含了 **ActiveSupport::Gzip.decompress/compress** 使得用 **Zlib** 压缩更容易。 
 
-Now you can use among environment options the **config.cache\_store** to specify the default place of caching store. It is worth mentioning, if the **tmp/cache** directory exists, the default is **FileStore**, in other case the **MemoryStore** will be used. You can configure in the following ways:
+现在你可以在 environment 选项中使用 **config.cache\_store** 指定一个默认的缓存地址。有价值提起的是，如果 **tmp/cache** 目录存在，默认的缓存地址是 **FileStore**, 否则使用 **MemoryStore**. 你可以用以下的方式配置它：
 
 	config.cache_store = :memory_store
 	config.cache_store = :file_store, "/path/to/cache/directory"
@@ -27,7 +27,7 @@ Now you can use among environment options the **config.cache\_store** to specify
 	config.cache_store = :mem_cache_store, "localhost"
 	config.cache_store = MyOwnStore.new("parameter")
 
-To make things even easier, the comment bellow is included in *environments/production.rb* file, in order to remind you of this option.
+为了把事情变得更容易，它在 *environments/production.rb* 文件中包含了以下注释，为了提醒你记得这个选项：
 
 	# Use a different cache store in production
 	# config.cache_store = :mem_cache_store

@@ -1,8 +1,8 @@
-## New namespaces in Atom Feed
+## Atom Feed 中新的 namespaces
 
-Do you know the **atom\_feed** method? It is one of the new features of Rails 2.0, making easier the creation of Atom feeds. See an example of use:
+你知道 **atom\_feed** 方法吗？这是 Rails 2.0的一个新特性，使创建 Atom feeds 变得更容易。看一个使用方法：
 
-In a *index.atom.builder* file:
+在一个 *index.atom.builder* 文件中：
 
 	atom_feed do |feed|
 	  feed.title("Nome do Jogo")
@@ -20,18 +20,18 @@ In a *index.atom.builder* file:
 	  end
 	end
 
-What is an Atom feed ? Atom is the name of XML based style and meta data. In other words is a protocol to publish content in Internet that is often updated, like a blog, for example. Feeds are always published in XML and in Atom it is identified as an application/atom+xml media type.
+什么是一个 Atom feed? Atom 的名字是基于 XML 样式的 meta 数据。 在互联网中它是一个发布经常更新的内容的协议，如Blog。例如，Feeds 经常以 XML 或 Atom 的格式发布标示为 application/atom+xml 类型. 
 
-In the first versions of Rails 2.0 this method used to accept as parameter **:language**, **:root_url** and **:url** options, you can obtain more information about these methods in Rails Documentation. But with the update made, we can now include new namespaces in the root element of the feed. For example:
+在 Rails 2.0的第一个版本中，该方法允许 **:language**, **:root_url** 和 **:url** 参数，你可以从 Rails 文档中获得更多关于这些方法的信息。但基于这一个更新，我们可以包含新的命名空间在一个Feed的root元素中，例如：
 
 	atom_feed('xmlns:app' => 'http://www.w3.org/2007/app') do |feed|
 
-Will return:
+将返回：
 
 	<feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom" 
 		xmlns:app="http://www.w3.org/2007/app">
 
-Modifying the example used before, we could use this way:
+修改这个示例之前，我们这样使用它：
 
 	atom_feed({'xmlns:app' => 'http://www.w3.org/2007/app',
 		'xmlns:openSearch' => 'http://a9.com/-/spec/opensearch/1.1/'}) do |feed| 

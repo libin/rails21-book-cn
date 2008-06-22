@@ -1,9 +1,9 @@
-## Defining the location of your routes file
+## 定义你的 routes 文件地址
 
-In Rails 2.1 you can define in which file your routes are stored, including the following line in your *enviroment.rb*:
+在 Rails 2.1你可以定义你的 routes 存在哪一个文件中，包含以下行在你的 *environment.rb* 文件中：
 
 	config.routes_configuration_file
 
-This can be useful in a scenario where you have two separated front-ends that share the same modules, libraries and plugins.
+这将有用于当你拥有两种分开的前端共享相同models时，libraries 和 plugins。
 
-For example, getsatisfaction.com and api.getsatisfaction.com share the same models, but not the controllers, helpers and views. getsatisfaction has its own routes file with optimizations to improve its SEO, while the API route's file doesn't know anything about SEO improvements.
+例如，getsatisfaction.com 和 api.getsatisfaction.com 共用相同的 models, 但使用不同的 controllers, helpers 和 views.getsatisfaction 拥有它自己针对 SEO 优化的 routes 文件，但 API routes 不需要任何关于 SEO 的优化。

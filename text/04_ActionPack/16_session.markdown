@@ -1,14 +1,14 @@
 ## session(:on)
 
-Did you know it is possible to turn off sessions in rails? Here is how to do it:
+或许你还不知道这个， Rails 可以关闭 sessions：
 
 	class ApplicationController < ActionController::Base
 	  session :off
 	end
 
-Note that in my example I'm turning off sessions for all controllers (**ApplicationController**), but I could also do it for a single controller.
+注意在我的示例中，我关闭了所有 controllers 中的 session(**ApplicationController**)，但我也能单独关闭某一个 controller 的 Session。
 
-If you want to have sessions on for a given controller in Rails 2.1 you can use the session method method passing the **:on** parameter:
+但如果我只想打开一个 controller 的 session, 在 Rails 2.1中，该方法允许 **:on** 选项，这样做：
 
 	class UsersController < ApplicationController
 	  session :on

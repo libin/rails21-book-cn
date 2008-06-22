@@ -1,10 +1,10 @@
-## Using email as username.
+## 使用Email作为用户名
 
-Some services use the e-mail as username, which forces us to use an URL like the following:
+某些服务使用Email作为用户名，这会要求使用如下形式的URL：
 
 	http://ernesto.jimenez@negonation.com:pass@tractis.com
 
-But this was causing a problem. Because we have two (@), the interpreter got lost when reading this. For this reason, **ActiveResource** was extended a little bit more, envisioning to make easier to use e-emails for authentication. Now you can do the following:
+这个URL中有两个"@"，这会带来问题：解释器无法正确解析这个URL。为此，对 **ActiveResource** 的使用方式作了扩展，以方便使用Email进行身份验证。可以这样来使用：
 
 	class Person < ActiveResource::Base
 	  self.site = "http://tractis.com"

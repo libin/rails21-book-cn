@@ -1,15 +1,14 @@
-## Timeouts
+## 超时
 
-ActiveResource uses **HTTP** to access RESTful API's and because of that it is susceptible to problems with slow server responses or non-reachable servers. In some cases, calls to ActiveResource can expire (timeout). Now you can control the expiration time with the timeout property.
+由于ActiveResource使用 **HTTP** 来访问RESTful API，当服务器响应缓慢或者服务器不工作的时候会出问题。在某些情况下，调用ActiveResource会超时失效。现在可以使用timeout属性来设置失效时间了。
 
 	class Person < ActiveResource::Base
 	  self.site = "http://api.people.com:3000/"
 	  self.timeout = 5 # waits 5 seconds before expire
 	end
 
-In this example above a timeout of 5 seconds was configured. A low value is recommended to allow your system to fail-fast, 
-preventing cascading fails which could incapacitate your server.
+本例中将超时设置为5秒钟。推荐的作法是将该值设得小一些以使系统能快速检测到失败，以避免相关错误引发服务器出错。
 
-Internally, ActiveResource shares resource from the Net:HTTP library to make HTTP requests. When you define a value for the timeout property, the same value is defined for the **read\_timeout** of the Net:HTTP object instance which is being used.
+ActiveResource内部使用Net::HTTP库来发起HTTP请求。当对timeout属性设值时，该值同时被设置到所使用的Net::HTTP对象实例的 **read\_timeout** 属性上。
 
-The default value is 60 seconds.
+该属性的默认值为60秒。
