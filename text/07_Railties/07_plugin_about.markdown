@@ -1,18 +1,18 @@
-##Getting information about a plugin
+## 获取一个插件的相关信息 （Getting information about a plugin）
 
-This is one of the new Rails 2.0 features which you probably never used. I say "probably", because in some very specific cases it can be useful, for example, to know a plugin version.
+Rails 2.0 的新特性之一，或许你从未用过。我是说“大概，或许”，可能在一些比较特殊情况下会有用，举个例子，比如获知一个插件的版本号。 
 
-To test it, we need to create a new file called *about.yml* in the plugin directory, something like this:
+不妨来尝试下，我们要在 plugin 目录里面新建一个 *about.yml* 文件，写入如下一些内容：
 
 	author: Carlos Brando
 	version: 1.2.0
 	description: A description about the plugin
 	url: http://www.nomedojogo.com
 
-We can get this information later this way:
+然后我们可以使用如下方式来获取相关信息：
 
 	plugin = Rails::Plugin.new(plugin_directory)
 	plugin.about["author"] # => “Carlos Brando”
 	plugin.about["url"] # => “http://www.nomedojogo.com”
 
-If you find some good use for this feature and want to share with me, maybe I can change my mind about its real need.
+如果你能在这个新特性中找到一些好的用处并愿与我分享，也许将改变我对于它的一些看法若真有需要的话。

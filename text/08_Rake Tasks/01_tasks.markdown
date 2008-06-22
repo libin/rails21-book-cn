@@ -2,28 +2,28 @@
 
 ### rails:update
 
-From now on every time you run the task **rake rails:freeze:edge** it will also run **rails:update**, updating the config files and *JavaScripts*.
+从 Rails 2.1 开始，每次你运行 **rake rails:freeze:edge** 命令的时候，它将自动运行 **rails:update** 来更新配置文件（config）和 *JavaScripts* 文件。
 
 ### Database in 127.0.0.1
 
-The databases.rake used to look only in localhost for local databases, it will now also consider the IP **127.0.0.1**. This works for both **create** and **drop** tasks. The databases.rake file was also refactored to make the code less repetitive.
+databases.rake 以前只操作 local 数据库，现在增加对 IP 为 127.0.0.1 的数据库的操纵。其主要用在创建（**create** ）和删除(**drop**)任务。databases.rake 采取 refactored 避免代码重复。
 
-### Freezing a specific Rails release.
+### 冻结指定的 Rails 版本 (Freezing a specific Rails release）
 
-Until Rails 2.1 it wasn't possible to freeze a specific Rails release inside your project, you could only use its Revision as a parameter. In Rails 2.1, we can freeze a specific release using the command below:
+在 Rails 2.1 之前，你不能在项目组指定一个需要冻结的 Rails 版本库，你只能使用版本信息做为参数；而在 Rails 2.1 后，我们可以在如下的命令中直接指定版本号:
 
 	rake rails:freeze:edge RELEASE=1.2.0
 
-## TimeZone
+## 时区 (TimeZone)
 
 #### rake time:zones:all
 
-Return all the time zones known to Rails, grouped by offset. You can also filter the return value using the optional parameter OFFSET, for instance: OFFSET=-6.
+按照 offset 分组返回 Rails 支持的所有时区，你可以使用 OFFSET 参数来过滤返回值，例如：OFFSET=-6
 
 #### rake time:zones:us
 
-Shows a list with all US time zones. The OFFSET option is still valid here.
+显示美国的所有时区，OFFSET 依然有效。
 
 #### rake time:zones:local
 
-Return all the time zones known to Rails that are in the same offset of your OS.
+返回你本地 OS 上 Rails 支持的时区信息。

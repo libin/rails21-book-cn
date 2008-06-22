@@ -1,13 +1,13 @@
-## Plugins
+## 插件 (Plugins)
 
-### Gems can now be plugins
+### Gems可插件化 (Gems can now be plugins)
 
-Now, any gem that has a **rails/init.rb** file can be installed inside the **vendor** directory of your Rails project just like a **plugin**.
+现在，任何包含 **rails/init.rb** 文件的 gem 都可以以插件的方式安装在 **vendor** 目录。
 
-### Using generators in plugins
+### 使用插件中的生成器 (Using generators in plugins)
 
-It's possible to configure **Rails** to search for **plugins** in places other than the **vendor/plugins** directory, just including this line of code in your **environment.rb**.
+可以配置 **Rails** 使得其在除了 **vendor/plugins** 之外的地方加载插件，配置方法为在 *environment.rb* 中添加如下代码:
 
 	config.plugin_paths = ['lib/plugins', 'vendor/plugins']
 	
-Rails 2.0 had a bug in this configuration that showed up when the plugin had generators. Because of that bug Rails only found generators in plugins that were inside the **vendor/plugins** directory. In 2.1 this bug was squashed.
+Rails 2.0 中这个地方存在一个 Bug，该 Bug 是其只在 **vendor/plugins** 中寻找有生成器的插件，而其上配置的路径下的插件的生成器并不生效。在 Rails 2.1 中已经修复。

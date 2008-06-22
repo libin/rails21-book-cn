@@ -1,6 +1,6 @@
-## Rails.logger, Rails.root, Rails.env and Rails.cache
+## Rails 的日志记录，根目录，环境变量和缓存 (Rails.logger, Rails.root, Rails.env and Rails.cache)
 
-In Rails 2.1 instead of using the constants: **RAILS\_DEFAULT\_LOGGER**, **RAILS\_ROOT**, **RAILS\_ENV** and **RAILS\_CACHE** you can use:
+在 Rails 2.1里面有新方式可以替代常量： **RAILS\_DEFAULT\_LOGGER**, **RAILS\_ROOT**, **RAILS\_ENV** 和 **RAILS\_CACHE**。取而代之的是：
 
 	# RAILS_DEFAULT_LOGGER
 	Rails.logger

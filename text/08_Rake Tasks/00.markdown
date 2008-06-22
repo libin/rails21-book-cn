@@ -1,1 +1,1 @@
-# Rake Tasks, Plugins and Scripts
+# Rake 任务，插件，脚本 (Rake Tasks, Plugins and Scripts)
