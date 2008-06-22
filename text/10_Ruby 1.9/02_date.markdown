@@ -1,6 +1,6 @@
-##New methodos for DateTime class
+## DateTime 类的新方法 (New methodos for DateTime class)
 
-In order to keep compatibility (duck-typing) with **Time** class, three new methods were added to **DateTime** class. The methods are **#utc**, **#utc?** and **#utc\_offset**. Look an example for each one:
+为了保证对 **Time** 类的兼容性（duck-typing），为 **DateTime** 添加了三个新方法，分别为： **#utc** ， **#utc?** 和 **#utc\_offset**，看个例子吧：
 
 	>> date = DateTime.civil(2005, 2, 21, 10, 11, 12, Rational(-6, 24))
 	#=> Mon, 21 Feb 2005 10:11:12 -0600

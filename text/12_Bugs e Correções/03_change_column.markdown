@@ -1,3 +1,3 @@
-##Bug fixes in change\_column
+## Bug fixes in change\_column
 
-An existing bug when using the **change\_column** method with **:null => true** in a column created using **:null => false** was also fixed. Because of this bug no changes were made when using the method.
+一个已经存在的 bug， 当使用 **change\_column** 方法时， 使用 **:null=>true** 在 column 中，创建过使用 **:null=>false** 也已经被解决了。当你使用这个方法的时候，这个 bug 不会造成任何改变。

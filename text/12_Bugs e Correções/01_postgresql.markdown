@@ -1,6 +1,6 @@
 ## Add columns in PostgreSQL
 
-There was a bug when using **PostgreSQL**. It occurred when creating a migration for adding a column in an existing table. Look an example:
+在 **PostgreSQL** 中，仍然存在一个 bug。当你对一个已存在的表进行添加 column 的迁移方法。看下面这个例子：
 
 File: *db/migrate/002\_add\_cost.rb*
 
@@ -15,7 +15,7 @@ File: *db/migrate/002\_add\_cost.rb*
 	  end
 	end
 
-Note we are creating a column with **:precision => 6** and **:scale => 2**. Now run **rake db:migrate** and let's see how is our table in database:
+注意我们创建了一个 column cost，**:precision => 6** 和 **:scale => 2** ，现在开始运行 **rake:db:migrate**。下面是我们数据库中的表。
 
 <table border="1" cellspacing="0" cellpadding="5">
 	<tr>
@@ -45,4 +45,4 @@ Note we are creating a column with **:precision => 6** and **:scale => 2**. Now 
 	</tr>
 </table>
 
-See "cost" column which we just created. It is a common **numeric**, but it was supposed to be a column like "price", above it, more precisely a **numeric(6,2)**. In Rails 2.1 this error doesn't occur anymore and the column will be created in the correct way.
+看着 cost 这个我们刚创建的 column 。这是一个常见的数字，但是更加类似于这个 column 类似于 ”price“，基于这个，更精确的描述是 **numeric(6,2)** 。在 Rails 2.1 中，这个错误不会产生，这个 column 将会以正确的方式别创建到数据库中。
