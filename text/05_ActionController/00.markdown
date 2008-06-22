@@ -1,3 +1,5 @@
 # ActionController
-ActionController is the layer responsible by receiving web requests and taking decisions of what is going to be run and rendered or to redirect the request to another action.
-An Action is defined as public methods within controllers which are automatically available through routes.
+
+ActionController 从网络当中接受请求，并决定将请求传给或者重定向给一个 action 去处理。
+
+一个 action 其实是 controller 里边的一个  public方法，并且通过 Rails 的路由规则可以自动被执行。

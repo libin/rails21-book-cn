@@ -2,7 +2,7 @@
 
 ### number\_to\_currency
 
-The **number\_to\_currency** method now accepts the **:format** option as a parameter, letting us to format the method's returning value. In earlier versions, when we had to format values for our local currency, we needed to include a space in front of **:unit** option to make the output format correct. See the examples:
+**number\_to\_currency** 方法接收 **:format** 选项作为参数，允许我们格式化方法返回值。 在之前的版本中，当我们不得不对本地的货币进行格式化时，我们需要包含在 **:unit** 选项前面包含一个空格，使得输出格式正确。看下面的例子：
 	
 	# R$ is the symbol for Brazilian currency
 	number_to_currency(9.99, :separator => ",", :delimiter => ".", :unit => "R$")
@@ -12,13 +12,13 @@ The **number\_to\_currency** method now accepts the **:format** option as a para
 		:delimiter => ".", :unit => "R$")
 	# => "R$ 9,99″
 	
-Besides that, we can customize in other forms, for example:
+随后，我们优化成另一个 form，例如：
 
 	number_to_currency(9.99, :format => "%n in Brazilian reais", :separator => ",", 
 		:delimiter => ".", :unit => "R$")
 	# => "9,99 em reais"
 
-When creating your own formatting string, you can use the following parameters:
+当需要创建你自己的字符串格式，只需使用以下的参数：
 
 	%u For the currency
 	%n For the number

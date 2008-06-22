@@ -2,7 +2,7 @@
 
 ### register\_javascript\_expansion
 
-This method registers one or more javascript files to be included when a symbol, defined by the programmer, is given as a parameter to the **javascript\_include\_tag** method. The idea is to call this method inside the **init.rb** of your plugin, in order to register the javascript files which your plugin places in the folder **public/javascripts**. Let's see how it works:
+当一个被程序员定义的符号作为一个参数，赋值给 **javascript\_include\_tag** 这个方法。 register_javascript_expansion 方法用来注册一个或者多个 javascript 文件被引用。这个是在 **init.rb** 中调用你的方法，将位于文件夹 **public/javascript** 下面的 javascript 文件注册进来。让我们看看它是如何进行工作的：
 
 	# In the init.rb file
 	ActionView::Helpers::AssetTagHelper.register_javascript_expansion 
@@ -19,7 +19,7 @@ This method registers one or more javascript files to be included when a symbol,
 
 ### register\_stylesheet\_expansion
 
-This method does exactly the same as the **ActionView::Helpers::AssetTagHelper#register\_javascript\_expansion** method, but it creates a symbol to be used later when making calls to **stylesheet\_link\_tag** method. Look an example:
+这个方法实际上类似于 **ActionView::Helpers::AssetTagHelper#register\_javascript\_expansion** 方法。不同的是它针对的是 CSS 而不是 Javascript。 看下面的例子：
 
 	# In the init.rb file
 	ActionView::Helpers::AssetTagHelper.register_stylesheet_expansion 

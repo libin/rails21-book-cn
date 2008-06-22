@@ -2,9 +2,9 @@
 
 ### fields\_for form\_for with index option.
 
-The **#fields\_for** and **form\_for** methods received the **:index** option, removing the need of using **:index => nil** on each form object.
+**#fields\_for** 和 **form\_for** 方法接受 **:index** 选项，在 form 对象中，如果需要去掉就必须使用 **:index => nil**。
 
-This how you used to code it:
+下面是示例代码：
 
 	<% fields_for "project[task_attributes][]", task do |f| %>
 	  <%= f.text_field :name, :index => nil %>
@@ -12,7 +12,7 @@ This how you used to code it:
 	  <%= f.hidden_field :should_destroy, :index => nil %>
 	<% end %>
 
-The following is the new method:
+紧随的是新的方法：
 
 	<% fields_for "project[task_attributes][]", task,
 	              :index => nil do |f| %>
