@@ -19,11 +19,7 @@
 
 ##致谢
 
-感谢Marcos Tapajós,如果没有他，我们到现在肯定看不到这本书；感谢Daniel Lopes给本书制作了漂亮的封面；
-
-还有Ruby on Rails Brazilian中那些直接或者间接给本书提供帮助的朋友们，您们的评论和建议都弥足珍贵，正像我以往说的一样，Rails中最精华的是其充满激情、创造力和分享精神的社区；
-
-还有chinaonrails.com社区中的朋友们，正是大家的辛勤工作，才使得我们能这么短的时间内即可完成翻译，谢谢你们。
+感谢Marcos Tapajós,如果没有他，我们到现在肯定看不到这本书；感谢Daniel Lopes给本书制作了漂亮的封面；还有Ruby on Rails Brazilian中那些直接或者间接给本书提供帮助的朋友们，您们的评论和建议都弥足珍贵，正像我以往说的一样，Rails中最精华的是其充满激情、创造力和分享精神的社区；还有chinaonrails.com社区中的朋友们，正是大家的辛勤工作，才使得我们能这么短的时间内即可完成翻译，谢谢你们。
 
 ##中文译者
 
@@ -32,7 +28,7 @@
 **IceskYsl**
 [http://iceskysl.1sters.com/](http://iceskysl.1sters.com/)
 
-第1章(Introduction)，第9章(Rake Tasks, Plugins and Scripts) 
+第1章(Introduction)，第9章(Rake Tasks, Plugins and Scripts)，
 第11章(Ruby 1.9)，第14章(Additional Information). 
 
 **jesse.cai**
